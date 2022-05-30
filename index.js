@@ -1,5 +1,5 @@
-import { addBookToLS, removeBookLS} from "./modules/localStorage.js"
-import {BookCollection} from "./modules/bookClass.js"
+import { addBookToLS, removeBookLS } from './modules/localStorage.js';
+import BookCollection from './modules/bookClass.js';
 
 class Book {
   constructor(title, author) {
@@ -9,10 +9,10 @@ class Book {
 }
 
 // Clear form fields
-let clearFormFields = () => {
+const clearFormFields = () => {
   document.querySelector('#book-name').value = '';
   document.querySelector('#book-author').value = '';
-}
+};
 
 // All Events
 // Display books on page load

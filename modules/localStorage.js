@@ -1,4 +1,4 @@
-export let getBooks = () => {
+export const getBooks = () => {
   let books;
   if (localStorage.getItem('bookList') === null) {
     books = [];
@@ -6,15 +6,15 @@ export let getBooks = () => {
     books = JSON.parse(localStorage.getItem('bookList'));
   }
   return books;
-}
+};
 
-export let addBookToLS = (book) => {
+export const addBookToLS = (book) => {
   const books = getBooks();
   books.push(book);
   localStorage.setItem('bookList', JSON.stringify(books));
-}
+};
 
-export let removeBookLS = (id) => {
+export const removeBookLS = (id) => {
   const books = getBooks();
   books.forEach((book, index) => {
     if ((book.id).toString() === id) {
@@ -22,4 +22,4 @@ export let removeBookLS = (id) => {
     }
   });
   localStorage.setItem('bookList', JSON.stringify(books));
-}
+};

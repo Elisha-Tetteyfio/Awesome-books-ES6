@@ -1,6 +1,6 @@
-import { getBooks } from "./localStorage.js";
+import { getBooks } from './localStorage.js';
 
-export class BookCollection {
+export default class BookCollection {
   static bookList = getBooks();
 
   static bookCard({ title, author, id }) {
