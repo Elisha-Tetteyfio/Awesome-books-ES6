@@ -1,5 +1,7 @@
 import { addBookToLS, removeBookLS } from './modules/localStorage.js';
 import BookCollection from './modules/bookClass.js';
+import { insertDate } from './modules/date.js';
+import { handleLinkClick, clearFormFields } from './modules/navigation.js';
 
 class Book {
   constructor(title, author) {
@@ -8,13 +10,8 @@ class Book {
   }
 }
 
-// Clear form fields
-const clearFormFields = () => {
-  document.querySelector('#book-name').value = '';
-  document.querySelector('#book-author').value = '';
-};
+insertDate();
 
-// All Events
 // Display books on page load
 window.addEventListener('DOMContentLoaded', BookCollection.bookDisplay);
 
@@ -47,3 +44,7 @@ bookContainer.addEventListener('click', (e) => {
     e.target.parentElement.remove();
   }
 });
+
+// Nav-links event
+document.getElementById('nav-links').addEventListener('click', handleLinkClick);
+document.getElementById('defaultOpen').click(); // Click on the list nav-link at default on page load
